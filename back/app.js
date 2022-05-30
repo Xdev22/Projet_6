@@ -4,6 +4,7 @@ const app = express();
 
 //importation de mongoose qui contient le code de la db
 const mongoose = require("./db/db");
+//donne accès au chemin du systeme de fichier
 const path = require("path");
 
 //importation de morgan (logger http )

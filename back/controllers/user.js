@@ -7,9 +7,11 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 exports.signup = (req, res, next) => {
+  //Hash du password
   bcrypt
     .hash(req.body.password, 10)
     .then((hash) => {
+      //l'user dans la DB aura comme password le resultat du hash
       const user = new User({
         email: req.body.email,
         password: hash,
